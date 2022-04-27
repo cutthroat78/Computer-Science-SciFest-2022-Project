@@ -1,4 +1,8 @@
 # Computer Science SciFest 2022 Project
+
+## Look at:
+- https://www.geeksforgeeks.org/personal-voice-assistant-in-python/
+
 ## To Do:
 - Control built in light on pi from program
 - Control zigbee bulb from program
