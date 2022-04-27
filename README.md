@@ -2,6 +2,12 @@
 
 ## Look at:
 - https://www.geeksforgeeks.org/personal-voice-assistant-in-python/
+### Unicorn Hat
+- https://github.com/pimoroni/unicorn-hat
+* Getting started - https://learn.pimoroni.com/tutorial/unicorn-hat/getting-started-with-unicorn-hat
+* Function reference - http://docs.pimoroni.com/unicornhat/
+* GPIO Pinout - http://pinout.xyz/pinout/unicorn_hat, http://pinout.xyz/pinout/unicorn_phat
+* Get help - http://forums.pimoroni.com/c/support
 
 ## To Do:
 - Control built in light on pi from program
