@@ -1,11 +1,3 @@
-#!/usr/bin/env python
-
-import colorsys
-import math
-import time
-from random import randint
-import unicornhat as unicorn
-
 def game_of_life():
   try:
     xrange
@@ -76,5 +68,3 @@ def game_of_life():
       life.next_generation()
       life.show_board()
       time.sleep(0.05)
-      
-game_of_life()
