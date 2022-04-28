@@ -10,7 +10,7 @@
 - Get help - http://forums.pimoroni.com/c/support
 
 ## To Do:
-- Control built in light on pi from program
+- Put all paterns into one program
 - Control zigbee bulb from program
 - Take in audio
 - Respond to command
