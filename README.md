@@ -2,6 +2,7 @@
 
 ## Look at:
 - https://www.geeksforgeeks.org/personal-voice-assistant-in-python/
+- https://medium.datadriveninvestor.com/7-simple-steps-to-building-a-virtual-assistant-with-python-eeb5ad371fff
 ### Unicorn Hat
 - https://github.com/pimoroni/unicorn-hat
 - Getting started - https://learn.pimoroni.com/tutorial/unicorn-hat/getting-started-with-unicorn-hat
@@ -10,7 +11,6 @@
 - Get help - http://forums.pimoroni.com/c/support
 
 ## To Do:
-- Put all paterns into one program
 - Control zigbee bulb from program
 - Take in audio
 - Respond to command

@@ -1,8 +1,14 @@
 #!/usr/bin/env python
 
-import colorsys
-import math
-import time
-from random import randint
-import unicornhat as unicorn
-from patterns import game_of_life
+import pyttsx3
+import speech_recognition as sr
+import webbrowser
+import DateTime
+import Wikipedia
+
+answer = input("What is your answer?")
+
+if answer == "candle":
+	exec(open("unicorn-patterns/candle.py").read())
+elif answer == "cross":
+	exec(open("unicorn-patterns/cross.py").read())

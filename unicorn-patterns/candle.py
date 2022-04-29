@@ -7,15 +7,6 @@ from random import randint
 
 import unicornhat as unicorn
 
-
-print("""Unicorn HAT: Candle
-
-This example simulates a flickering candle flame.
-
-Press Ctrl+C to exit!
-
-""")
-
 unicorn.rotation(180) # 180 is correct when powercord is at top of RPi
 
 unicorn.brightness(0.5)
