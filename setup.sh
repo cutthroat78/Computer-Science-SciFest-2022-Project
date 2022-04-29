@@ -1,6 +1,4 @@
 #!/bin/bash
 curl -sS https://get.pimoroni.com/unicornhat | bash # For Unicorn hat
-sudo pip install pyttsx3
-sudo pip install SpeechRecognition
-sudo pip install Wikipedia
-sudo pip install webbrowser
+sudo pip3 --no-cache-dir install SpeechRecognition playsound gtts pygobject pyaudio
+sudo apt-get install python3-pyaudio python-pyaudio
