@@ -26,7 +26,7 @@ unicorn.rotation(0)
 unicorn.brightness(0.5)
 width,height=unicorn.get_shape()
 
-TXT = "Computer Science Rules"
+TXT = "Scifest"
 
 figletText = figlet_format(TXT+' ', "banner", width=1000) # banner font generates text with heigth 7
 textMatrix = figletText.split("\n")[:width] # width should be 8 on both HAT and pHAT!
