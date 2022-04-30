@@ -2,15 +2,9 @@
 
 import os
 import time
-import playsound
 import speech_recognition as sr
-from gtts import gTTS
 
-def speak(text):
-    tts = gTTS(text=text, lang="en")
-    filename = "./voice.mp3"
-    tts.save(filename)
-    playsound.playsound(filename)
+# os.system('espeak -ven-us+f4 -s170 ""')
 
 def get_audio():
 	r = sr.Recognizer()
@@ -26,15 +20,18 @@ def get_audio():
 
 	return said
 
-answer = input("Answer:")# get_audio()
+answer = input(">")# get_audio
+print(answer)
 
-if "candle" in answer:
-	speak("Displaying a candle")
-	exec(open("unicorn-patterns/candle.py").read())
-elif "cross" in answer:
-	exec(open("unicorn-patterns/cross.py").read())
+if "display" in answer:
+	if "candle" in answer:
+		os.system('espeak -ven-us+f4 -s170 "Displaying a candle"')
+		exec(open("unicorn-patterns/candle.py").read())
+	elif "cross" in answer:
+		exec(open("unicorn-patterns/cross.py").read())
+		
+elif "time" in answer:
+	os.system('espeak -ven-us+f4 -s170 "It is $(date +"%l %M %p")"')
 
-if "display candle" in answer:
-	exec(open("unicorn-patterns/candle.py").read())
-elif "display cross" in answer:
-	exec(open("unicorn-patterns/cross.py").read())
+elif "date" in answer:
+	os.system('espeak -ven-us+f4 -s170 "It is $(date +"%d") of $(date +"%B %Y")"')
