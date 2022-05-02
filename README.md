@@ -2,6 +2,10 @@
 
 ## To Do:
 - Control zigbee bulb from program
+- Make espeak always talk out of hdmi
+```
+espeak "Hello world" --stdout | aplay -D sysdefault
+```
 - Commands:
   - Control zigbee bulb
   - Give Weather
