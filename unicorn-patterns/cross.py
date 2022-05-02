@@ -5,14 +5,9 @@ from random import randint
 
 import unicornhat as unicorn
 
+timeout = 20   # [seconds]
 
-print("""Cross
-
-You should see randomly coloured dots crossing paths with each other.
-
-If you're using a Unicorn HAT and only half the screen lights up, 
-edit this example and  change 'unicorn.HAT' to 'unicorn.HAT' below.
-""")
+timeout_start = time.time()
 
 unicorn.set_layout(unicorn.HAT)
 unicorn.rotation(0)
@@ -74,7 +69,7 @@ def plot_points():
     unicorn.show()
 
 
-while True:
+while time.time() < timeout_start + timeout:
 
     if len(points) < 10 and randint(0, 5) > 1:
         points.append(LightPoint())

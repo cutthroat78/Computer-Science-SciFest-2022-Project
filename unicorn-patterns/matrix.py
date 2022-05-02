@@ -5,11 +5,9 @@ from random import randint
 
 import unicornhat as unicorn
 
+timeout = 20   # [seconds]
 
-print("""Matrix
-
-Follow the white rabbit...
-""")
+timeout_start = time.time()
 
 unicorn.set_layout(unicorn.HAT)
 unicorn.rotation(90)
@@ -20,7 +18,7 @@ wrd_rgb = [[154, 173, 154], [0, 255, 0], [0, 200, 0], [0, 162, 0], [0, 145, 0], 
 clock = 0
 
 blue_pilled_population = [[randint(0,7), 7]]
-while True:
+while time.time() < timeout_start + timeout:
         for person in blue_pilled_population:
                 y = person[1]
                 for rgb in wrd_rgb:

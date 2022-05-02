@@ -5,30 +5,18 @@ import time
 
 import unicornhat as unicorn
 
+timeout = 20   # [seconds]
 
-print("""Rainbow
-
-Displays a beautiful rainbow across your HAT/pHAT :D
-
-If you're using a Unicorn HAT and only half the screen lights up, 
-edit this example and  change 'unicorn.HAT' to 'unicorn.HAT' below.
-""")
+timeout_start = time.time()
 
 unicorn.set_layout(unicorn.HAT)
 unicorn.rotation(0)
 unicorn.brightness(0.5)
 width,height=unicorn.get_shape()
 
-
-print("Reticulating splines")
-time.sleep(.5)
-print("Enabled unicorn poop module!")
-time.sleep(.5)
-print("Pooping rainbows...")
-
 i = 0.0
 offset = 30
-while True:
+while time.time() < timeout_start + timeout:
         i = i + 0.3
         for y in range(height):
                 for x in range(width):

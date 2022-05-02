@@ -2,7 +2,6 @@
 
 ## To Do:
 - Control zigbee bulb from program
-- Take in audio
 - Commands:
   - Control zigbee bulb
   - Give Weather

@@ -2,23 +2,20 @@
 
 from random import randint
 
+import time
+
 import unicornhat as unicorn
 
+timeout = 20   # [seconds]
 
-print("""Random Sparkles
-
-Displays random, colorful sparkles.
-
-If you're using a Unicorn HAT and only half the screen lights up, 
-edit this example and  change 'unicorn.HAT' to 'unicorn.HAT' below.
-""")
+timeout_start = time.time()
 
 unicorn.set_layout(unicorn.HAT)
 unicorn.rotation(0)
 unicorn.brightness(0.5)
 width,height=unicorn.get_shape()
 
-while True:
+while time.time() < timeout_start + timeout:
     x = randint(0, (width-1))
     y = randint(0, (height-1))
     r = randint(0, 255)

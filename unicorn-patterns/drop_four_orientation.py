@@ -5,14 +5,9 @@ from random import randint
 
 import unicornhat as unicorn
 
+timeout = 20   # [seconds]
 
-print("""Drop: Four Orientation
-
-The same as Drop, but showing the virtual bucket in 4 different orientations.
-
-If you're using a Unicorn HAT and only half the screen lights up, 
-edit this example and  change 'unicorn.HAT' to 'unicorn.HAT' below.
-""")
+timeout_start = time.time()
 
 unicorn.set_layout(unicorn.HAT)
 unicorn.rotation(0)
@@ -58,7 +53,7 @@ def drop_ball():
     heights[ball_column] += 1
 
 
-while True:
+while time.time() < timeout_start + timeout:
   for rot in [0, 90, 180, 270]:
     unicorn.rotation(rot)
     uh_width,uh_height=unicorn.get_shape()

@@ -6,14 +6,9 @@ import time
 
 import unicornhat as unicorn
 
+timeout = 20   # [seconds]
 
-print("""Demo
-
-This pixel shading demo transitions between 4 classic graphics demo effects.
-
-If you're using a Unicorn HAT and only half the screen lights up, 
-edit this example and  change 'unicorn.HAT' to 'unicorn.HAT' below.
-""")
+timeout_start = time.time()
 
 unicorn.set_layout(unicorn.HAT)
 unicorn.rotation(0) # tested on pHAT/HAT with rotation 0, 90, 180 & 270
@@ -151,7 +146,7 @@ def tunnel(x, y, step):
 effects = [tunnel, rainbow_search, checker, swirl]
 
 step = 0
-while True:
+while time.time() < timeout_start + timeout:
     for i in range(500):
         for y in range(u_height):
             for x in range(u_width):

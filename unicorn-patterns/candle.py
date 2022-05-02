@@ -7,6 +7,10 @@ from random import randint
 
 import unicornhat as unicorn
 
+timeout = 20   # [seconds]
+
+timeout_start = time.time()
+
 unicorn.rotation(180) # 180 is correct when powercord is at top of RPi
 
 unicorn.brightness(0.5)
@@ -59,7 +63,7 @@ def get_pixel(b, x, y):
 step = 0
 
 try:
-    while True:
+    while time.time() < timeout_start + timeout:
 	# step for waving animation, adds some randomness
         step += randint(0, 15)
 

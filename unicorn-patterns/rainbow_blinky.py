@@ -11,13 +11,9 @@ except ImportError:
 
 import unicornhat as unicorn
 
-print("""Rainbow Blinky
+timeout = 20   # [seconds]
 
-Blinks a rainbow from the center of the display.
-
-If you're using a Unicorn HAT and only half the screen lights up, 
-edit this example and  change 'unicorn.HAT' to 'unicorn.HAT' below.
-""")
+timeout_start = time.time()
 
 unicorn.set_layout(unicorn.HAT)
 unicorn.rotation(0) # tested on pHAT/HAT with rotation 0, 90, 180 & 270
@@ -38,7 +34,7 @@ def make_gaussian(fwhm):
     gauss = numpy.exp(-4 * numpy.log(2) * ((x - x0) ** 2 + (y - y0) ** 2) / fwhm ** 2)
     return gauss
 
-while True:
+while time.time() < timeout_start + timeout:
     for z in list(range(1, 10)[::-1]) + list(range(1, 10)):
         fwhm = 5.0/z
         gauss = make_gaussian(fwhm)

@@ -2,6 +2,7 @@
 
 from time import sleep
 from sys import exit
+import time
 
 try:
     from pyfiglet import figlet_format
@@ -10,16 +11,9 @@ except ImportError:
 
 import unicornhat as unicorn
 
+timeout = 20   # [seconds]
 
-print("""Figlet
-
-You should see scrolling text that is defined in the TXT variable.
-
-If the text moves in the wrong direction, change the rotation from 0 to 180.
-
-Text output is kind of limited on a pHAT of course because most letters don't
-fit on the small display of 4x8.
-""")
+timeout_start = time.time()
 
 unicorn.set_layout(unicorn.HAT)
 unicorn.rotation(0)
@@ -46,6 +40,6 @@ def step():
                 unicorn.set_pixel(width-w-1, h, 255, 0, 0)
     unicorn.show()
 
-while True:
+while time.time() < timeout_start + timeout:
     step()
     sleep(0.2)

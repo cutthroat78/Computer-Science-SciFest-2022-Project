@@ -4,15 +4,6 @@ import time
 
 import unicornhat as unicorn
 
-
-print("""Simple
-
-Turns each pixel on in turn and updates the display.
-
-If you're using a Unicorn HAT and only half the screen lights up, 
-edit this example and  change 'unicorn.HAT' to 'unicorn.HAT' below.
-""")
-
 unicorn.set_layout(unicorn.HAT)
 unicorn.rotation(0)
 unicorn.brightness(0.5)

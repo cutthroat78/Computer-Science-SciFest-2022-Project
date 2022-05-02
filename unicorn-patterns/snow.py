@@ -2,16 +2,13 @@
 
 from random import randint
 from time import sleep
+import time
 
 import unicornhat as unicorn
 
-print("""Snow
+timeout = 20   # [seconds]
 
-Draws random white pixels to look like a snowstorm.
-
-If you're using a Unicorn HAT and only half the screen lights up, 
-edit this example and  change 'unicorn.HAT' to 'unicorn.HAT' below.
-""")
+timeout_start = time.time()
 
 unicorn.set_layout(unicorn.HAT)
 unicorn.rotation(0)
@@ -77,6 +74,6 @@ def step():
 
 
 init()
-while True:
+while time.time() < timeout_start + timeout:
     step()
     sleep(0.3)

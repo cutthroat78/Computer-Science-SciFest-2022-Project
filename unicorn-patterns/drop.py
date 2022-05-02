@@ -5,14 +5,9 @@ from random import randint
 
 import unicornhat as unicorn
 
+timeout = 20   # [seconds]
 
-print("""Drop
-
-Creates a virtual bucket and fills it with randomly coloured dots.
-
-If you're using a Unicorn HAT and only half the screen lights up, 
-edit this example and  change 'unicorn.HAT' to 'unicorn.HAT' below.
-""")
+timeout_start = time.time()
 
 unicorn.set_layout(unicorn.HAT)
 unicorn.rotation(0)
@@ -59,7 +54,7 @@ def drop_ball():
 
 
 setup()
-while True:
+while time.time() < timeout_start + timeout:
     for i in range(0, (uh_width-2)*(uh_height-1)):
         drop_ball()
     time.sleep(1)
