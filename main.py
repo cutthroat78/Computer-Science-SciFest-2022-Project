@@ -28,7 +28,7 @@ while True:
 	answer = get_audio()
 	print(answer)
 
-	if "display" in answer:
+	if "play" in answer or "show" in answer:
 		if "random" in answer:
 			choices = ["unicorn-patterns/candle.py", "unicorn-patterns/cross.py", "unicorn-patterns/demo.py", "unicorn-patterns/drop_four_orientation.py", "unicorn-patterns/drop.py", "unicorn-patterns/figlet.py", "unicorn-patterns/matrix.py", "unicorn-patterns/rainbow_blinky.py", "unicorn-patterns/rainbow.py", "unicorn-patterns/random_blinky.py", "unicorn-patterns/random_sparkles.py", "unicorn-patterns/simple.py", "unicorn-patterns/snow.py"]
 			os.system('espeak -ven-us+f4 -s170 "Displaying a random pattern"')
