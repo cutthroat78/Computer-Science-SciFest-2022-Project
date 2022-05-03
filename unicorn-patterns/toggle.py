@@ -55,4 +55,4 @@ if __name__ == "__main__":
                 #call the toggle function with a given state and it will return the inverse
                 bToggle = toggle(bToggle)
                 #pause and await input from keyboard i.e. <enter> no characters are checked
-                raw_input("")
+                input("")
