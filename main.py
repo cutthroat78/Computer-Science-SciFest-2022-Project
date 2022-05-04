@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 
-import os, sys, time, random
+import os, sys, time, random, wikipedia
+from PyDictionary import PyDictionary
 import speech_recognition as sr
+
+dictionary=PyDictionary()
 
 def get_audio():
 	r = sr.Recognizer()
@@ -21,7 +24,6 @@ def speak(phrase):
 	quoted = '"' + phrase + '"'
 	os.system('espeak ' + quoted + " --stdout | aplay -D sysdefault")
 
-# speak("Say something for me to do")
 #answer = sys.argv[1]
 while True:
 	print("Listening")
@@ -77,6 +79,17 @@ while True:
 		elif "play" in answer or "show" in answer:
 			speak("I dont know a pattern called " + answer[5:])
 			
+	elif "who made" in answer or "who created" in answer:
+		speak("I was made by Iustina, Cathal and Matthew from Clogher Road Community College")
+		
+	elif "define the word" in answer:
+		speak(str(dictionary.meaning(answer[16:])))
+			
+	elif "define" in answer:
+		speak(str(dictionary.meaning(answer[7:])))
+	
+	elif "what is the meaning of the word" in answer:
+		speak(str(dictionary.meaning(answer[32:])))
 		
 	elif "turn" in answer or "light" in answer:
 		if "on" in answer:
@@ -98,7 +111,7 @@ while True:
 		speak(answer[4:])
 	
 	elif "hello" in answer or "hi" in answer:
-		number = random.randint(0,2)
+		number = random.randint(1,2)
 		if number == 1:
 			speak("Hello, human")
 		elif number == 2:
@@ -118,6 +131,47 @@ while True:
 		
 	elif "good night" in answer or "goodnight" in answer:
 		speak("Good night")
-
+		
+	elif "goodbye" in answer or "good bye" in answer or "bye" in answer:
+		speak("Good bye")
+		
+	elif "what is" in answer:
+		search = '"' + answer[8:] + '"'
+		wiki = "'" + wikipedia.summary(search) + "'"
+		print(wiki)
+		speak(wiki)
+		
+	elif "who is" in answer:
+		search = '"' + answer[7:] + '"'
+		wiki = "'" + wikipedia.summary(search) + "'"
+		print(wiki)
+		speak(wiki)
+		
+	elif "wikipedia" in answer or "Wikipedia" in answer:
+		search = '"' + answer[10:] + '"'
+		wiki = "'" + wikipedia.summary(search) + "'"
+		print(wiki)
+		speak(wiki)
+		
+	elif "wiki" in answer or "Wiki" in answer:
+		search = '"' + answer[5:] + '"'
+		wiki = "'" + wikipedia.summary(search) + "'"
+		print(wiki)
+		speak(wiki)
+		
+	elif not answer:
+		number = random.randint(1,2)
+		if number == 1:
+			speak("Is anybody there?")
+		elif number == 2:
+			speak("I can't hear you!")
+			
+	elif "ass" in answer or "*" in answer or "dick" in answer:
+		number = random.randint(1,2)
+		if number == 1:
+			speak("Don't use such language!")
+		elif number == 2:
+			speak("Don't curse at me!")
+		
 	else:
 		speak("I didnt understand what you meant by " + answer)
