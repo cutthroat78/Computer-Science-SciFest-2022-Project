@@ -51,7 +51,7 @@ while True:
 		elif "text" in answer:
 			speak("Displaying text")
 			exec(open("unicorn-patterns/figlet.py").read())
-		elif "matrix" in answer:
+		elif "matrix" in answer or "Matrix" in answer:
 			speak("Displaying the matrix")
 			exec(open("unicorn-patterns/matrix.py").read())
 		elif "rainbow" in answer:
@@ -103,6 +103,21 @@ while True:
 			speak("Hello, human")
 		elif number == 2:
 			speak("Hi")
+			
+	elif "good morning" in answer:
+		speak("Good morning")
+		
+	elif "good day" in answer:
+		speak("Good day")
+		
+	elif "good evening" in answer:
+		speak("Good evening")
+		
+	elif "good afternoon" in answer:
+		speak("Good afternoon")
+		
+	elif "good night" in answer or "goodnight" in answer:
+		speak("Good night")
 
 	else:
 		speak("I didnt understand what you meant by " + answer)
