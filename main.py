@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 
-import os, sys, time, random, wikipedia
+import os, sys, time, random, wikipedia, randfacts, pyjokes
 from PyDictionary import PyDictionary
 import speech_recognition as sr
 
 dictionary=PyDictionary()
-
 def get_audio():
 	r = sr.Recognizer()
 	with sr.Microphone() as source:
@@ -26,6 +25,7 @@ def speak(phrase):
 
 #answer = sys.argv[1]
 while True:
+	speak("I am listening now")
 	print("Listening")
 	answer = get_audio()
 	print(answer)
@@ -56,7 +56,7 @@ while True:
 		elif "matrix" in answer or "Matrix" in answer:
 			speak("Displaying the matrix")
 			exec(open("unicorn-patterns/matrix.py").read())
-		elif "rainbow" in answer:
+		elif "rainbow" in answer or "Rainbow" in answer:
 			speak("Displaying a rainbow")
 			exec(open("unicorn-patterns/rainbow.py").read())
 		elif "blink" in answer:
@@ -172,6 +172,28 @@ while True:
 			speak("Don't use such language!")
 		elif number == 2:
 			speak("Don't curse at me!")
+			
+	elif "how are you" in answer:
+		number = random.randint(1,3)
+		if number == 1:
+			speak("I am fine")
+		elif number == 2:
+			speak("I am good")
+		elif number == 3:
+			speak("I don't know, I can't feel")
+			
+	elif "how is your day" in answer:
+		speak("My day is going well")
+		
+	elif "fact" in answer:
+		fact = randfacts.get_fact()
+		print(fact)
+		speak(fact)
+		
+	elif "joke" in answer:
+		joke = pyjokes.get_joke()
+		print(joke)
+		speak(joke)
 		
 	else:
 		speak("I didnt understand what you meant by " + answer)
